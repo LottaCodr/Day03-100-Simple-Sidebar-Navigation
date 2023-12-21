@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+.toggle-btn {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.sidebar {
+    
+   position: fixed;
+   height: 100%;
+   width: 260px;
+   background: #11101d;
+   padding: 15px;
+   z-index: 99;
+   transition: left 0.3s ease-in-out;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 25px;
+    padding: 0 15px;
+}
+
+.nav-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-top: 40px;
+    overflow-y: scroll;
+    
+}
+
+.nav-content::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.nav-items {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    transition: all 0.4s ease;
+    
+}
+
+
+.subnav-active .nav-items{
+    transform: translateX(-56%);
+}
+
+.nav-title {
+    color: #fff;
+    font-size: 14px;
+    padding: 15px 20px;
+
+}
+
+.item a,
+.subnav-item {
+    padding: 16px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+
+
+    
+
+}
+
+.item i {
+    font-size: 12px;
+}
+
+.item a:hover,
+.subnav-item:hover,
+.subnav .nav-title:hover {
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+
+    animation: pulse 0.5s ease infinite;
+
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+.subnav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.subnav {
+    position: absolute;
+    height:  100%;
+    width: 100%;
+    top: 0;
+    right: calc(-100% - 26px);
+    height:  calc(100% + 100vh);
+    background:  #11101d;
+    display: none;
+}
+
+.show-subnav ~ .subnav {
+    display: block;
+}
+
+.subnav .nav-title {
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.subnav .nav-title i {
+    margin-right: 10px;
+}
+
+.navbar, 
+.main {
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+.sidebar.close ~ .navbar, 
+.sidebar.close ~ .main {
+    left: 0;
+    width: 100%;
+}
+
+.navbar #sidebar-close {
+    cursor: pointer;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 100;
+    background: #e7f2fd;
+}
+
+.navbar {
+    position: fixed;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 25px;
+    background: black;
+    cursor: pointer;
+
+}
+
+.main h1 {
+    color: #11101d;
+    font-size: 40px;
+    text-align: center;
+}
+
+
